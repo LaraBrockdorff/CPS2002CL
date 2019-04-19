@@ -10,12 +10,17 @@ public class Player {
     }
 
     public void move(String direction){
-        if(direction.equals("x")){
-            position.incrementX();
-        }else if(direction.equals("y")){
-            position.incrementY();
+        if(direction.equalsIgnoreCase("l")){
+            position.setX(position.getX() -1);
+        }else if(direction.equalsIgnoreCase("r")){
+            position.setX(position.getX() +1);
+        }else if(direction.equalsIgnoreCase("u")){
+            position.setY(position.getY() -1);
+        }else if(direction.equalsIgnoreCase("d")){
+            position.setY(position.getY() +1);
         }
     }
+
 
     public Position getPosition() {
         return position;
