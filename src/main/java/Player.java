@@ -9,15 +9,23 @@ public class Player {
         PlayerId = playerId;
     }
 
-    public void move(String direction){
+    public boolean move(String direction){
         if(direction.equalsIgnoreCase("l")){
             position.setX(position.getX() -1);
+            return true;
         }else if(direction.equalsIgnoreCase("r")){
             position.setX(position.getX() +1);
+            return true;
         }else if(direction.equalsIgnoreCase("u")){
             position.setY(position.getY() -1);
+            return true;
         }else if(direction.equalsIgnoreCase("d")){
             position.setY(position.getY() +1);
+            return true;
+        }else{
+            System.out.println("Invalid direction. Only : U, D, L ,R are accepted");
+            return false;
+
         }
     }
 
