@@ -20,15 +20,36 @@ public class Game {
     }
 
     public void startGame(){
+        boolean valid= true;
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Game");
-        System.out.println("How many players would you like? ");
+        do {
+            System.out.println("How many players would you like? ");
 
-        setNumberOfPlayers(sc.nextInt());
-        //TODO: Add validation
+            n = sc.nextInt();
+            if (n < 2 || n > 8) {
+                System.out.println("**Please enter a valid integer between 2 and 8 **");
+                valid = false;
+            }else {
+                valid =true;
+                setNumberOfPlayers(n);
+            }
+        }while (!valid);
 
+
+
+        do{
         System.out.println("How many rows (and colums) would you like? ");
-        map.setMapSize(sc.nextInt(),n);
+        int mapSize = sc.nextInt();
+        if (( n<6 && (mapSize < 5 || mapSize> 50)) || ((n>5 && n<9)&&(mapSize < 8 || mapSize> 50))){
+            valid= false;
+        }else{
+            valid=true;
+            map.setMapSize(sc.nextInt(),n);
+        }
+
+        }while(!valid);
+
 
     }
 
@@ -38,17 +59,11 @@ public class Game {
         int randY = 0;
 
         for(int i =0; i<n ; i++){
-            if(n<5){
+
                 do {
-                    randX = (int) (Math.random() * ((50 - 5) + 1)) + 5;
-                    randY = (int) (Math.random() * ((50 - 5) + 1)) + 5;
+                    randX = (int) (Math.random() * map.getSize()) ;
+                    randY = (int) (Math.random() * map.getSize()) ;
                 }while (map.getTileType(randX,randY) != 'g');
-            }else {
-                do {
-                    randX = (int) (Math.random() * ((50 - 8) + 1)) + 8;
-                    randY = (int) (Math.random() * ((50 - 8) + 1)) + 8;
-                }while (map.getTileType(randX,randY) != 'g');
-            }
 
             Position newPosition = new Position(randX,randY);
 
