@@ -36,8 +36,7 @@ public class Game {
             }
         }while (!valid);
 
-
-
+        
         do{
         System.out.println("How many rows (and colums) would you like? ");
         int mapSize = sc.nextInt();
