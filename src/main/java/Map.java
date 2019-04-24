@@ -163,7 +163,7 @@ public class Map {
     }
 
     public boolean visitMap(int x, int y, Map mapp, int no,List<Player>players) {
-        Dat[][] mp = mapp.getMap();
+         Dat[][] mp = mapp.getMap();
         boolean found = false;
         if (mp[x][y].type == 'g') {
             mp[x][y].visited[no] = true;
