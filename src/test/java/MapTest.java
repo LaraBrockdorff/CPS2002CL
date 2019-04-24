@@ -54,7 +54,7 @@ public class MapTest {
         maps.generate(5);
         Dat [][] map= maps.getMap();
 
-        assertEquals(map[x][y],maps.getTileType(x,y));
+        assertEquals(map[x][y].type,maps.getTileType(x,y));
         System.out.println(maps.getTileType(x,y) );
         System.out.println(map[x][y]);
     }
