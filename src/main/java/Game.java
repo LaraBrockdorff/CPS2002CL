@@ -21,6 +21,7 @@ public class Game {
 
     public void startGame(){
         boolean valid= true;
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Game");
         do {
@@ -32,23 +33,25 @@ public class Game {
                 valid = false;
             }else {
                 valid =true;
-                setNumberOfPlayers(n);
+
             }
         }while (!valid);
 
-        
+        int mapSize=0;
         do{
         System.out.println("How many rows (and columns) would you like? ");
-        int mapSize = sc.nextInt();
+         mapSize = sc.nextInt();
         if (( n<6 && (mapSize < 5 || mapSize> 50)) || ((n>5 && n<9)&&(mapSize < 8 || mapSize> 50))){
             valid= false;
         }else{
             valid=true;
-            map.setMapSize(n, mapSize);
+
         }
 
         }while(!valid);
 
+       // setNumberOfPlayers(n);
+        map.setMapSize(n, mapSize);
         map.generate(n);
         setNumberOfPlayers(n);
         gameLoop(n);
@@ -63,8 +66,8 @@ public class Game {
         for(int i =0; i<n ; i++){
 
                 do {
-                    randX = (int) (Math.random() * map.getSize()) ;
-                    randY = (int) (Math.random() * map.getSize()) ;
+                    randX = (int) (Math.random() * map.getSize()+1) ;
+                    randY = (int) (Math.random() * map.getSize()+1) ;
                 }while (map.getTileType(randX,randY) != 'g');
 
             Position newPosition = new Position(randX,randY);
