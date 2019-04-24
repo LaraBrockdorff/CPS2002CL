@@ -38,17 +38,20 @@ public class Game {
 
         
         do{
-        System.out.println("How many rows (and colums) would you like? ");
+        System.out.println("How many rows (and columns) would you like? ");
         int mapSize = sc.nextInt();
         if (( n<6 && (mapSize < 5 || mapSize> 50)) || ((n>5 && n<9)&&(mapSize < 8 || mapSize> 50))){
             valid= false;
         }else{
             valid=true;
-            map.setMapSize(sc.nextInt(),n);
+            map.setMapSize(n, mapSize);
         }
 
         }while(!valid);
 
+        map.generate(n);
+        setNumberOfPlayers(n);
+        gameLoop(n);
 
     }
 
@@ -67,9 +70,39 @@ public class Game {
             Position newPosition = new Position(randX,randY);
 
             Player newPlayer = new Player( newPosition,i);
+            newPlayer.setStartingPos(newPosition);
+            newPlayer.setMap(map);
             players.add(newPlayer);
         }
 
+    }
+
+    public void gameLoop(int noOfPlayers){
+        Scanner sc = new Scanner(System.in);
+        boolean treasureFound=false;
+        String [] directions= new String[noOfPlayers];
+        do {
+            for (int i = 0; i < noOfPlayers; i++) {
+                System.out.println("PLAYER NO: "+ i);
+                System.out.println("ENTER DIRECTION TO MOVE IN");
+                String direction= sc.next();
+                directions[i]=direction;
+            }
+
+            for(int i=0 ; i<noOfPlayers;i++) {
+                System.out.println("PLAYER : "+ i);
+                Player player= players.get(i);
+                String dir= directions[i];
+                if (player.move(dir)) {
+                    Position pos = player.getPosition();
+                    int x = pos.getX();
+                    int y = pos.getY();
+                    Map playerMap = player.getMap();
+                    treasureFound = playerMap.visitMap(x, y,playerMap,i,players);
+                    playerMap.generateFile(i,players);
+                }
+            }
+        } while(!treasureFound);
     }
 
 
