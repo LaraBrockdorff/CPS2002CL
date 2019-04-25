@@ -48,7 +48,7 @@ public class Map {
     }
 
     public void generate(int num){
-        int arrSize=size-1;
+        int arrSize=size;
         Random r = new Random();
         map= new Dat[arrSize][arrSize];
 

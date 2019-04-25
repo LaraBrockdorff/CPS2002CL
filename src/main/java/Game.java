@@ -103,6 +103,7 @@ public class Game {
                     Map playerMap = player.getMap();
                     treasureFound = playerMap.visitMap(x, y,playerMap,i,players);
                     playerMap.generateFile(i,players);
+
                 }
             }
         } while(!treasureFound);
