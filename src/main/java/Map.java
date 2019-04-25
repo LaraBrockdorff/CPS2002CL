@@ -82,7 +82,7 @@ public class Map {
         int arrSize=size-1;
         char type=' ';
 
-        if(x<=arrSize && y<=arrSize) {
+        if(x<arrSize && y<arrSize) {
             if (map[x][y].type == 'g') {
                 type = 'g';
             } else if (map[x][y].type == 'w') {
