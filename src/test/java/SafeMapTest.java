@@ -3,7 +3,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 
-public class MapTest {
+public class SafeMapTest {
     Map maps;
     @Before
     public void setup (){
