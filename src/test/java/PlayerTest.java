@@ -8,7 +8,7 @@ public class PlayerTest {
 
     @Before
     public void setup(){
-        Map map = new Map();
+        Map map = new SafeMap();
 
         Position position = new Position( 2,2);
         player = new Player(position, 0);

@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class Game {
     private int turns;
     private List<Player> players = new ArrayList<Player>();
-    private Map map = new Map();
+   // private Map map = new Map();
+    private Map map;
     private  int n; // number of players
+    private int mode;
 
 
 
@@ -24,6 +26,16 @@ public class Game {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Game");
+
+        System.out.println(" * Please choose : Safe [0] or Hazardous [1] Game mode \n by entering the corresponding number");
+        mode = sc.nextInt();
+
+        if(mode ==0 ){
+            map = new SafeMap();
+        } else if (mode ==1){
+            map = new HazardousMap();
+        }
+
         do {
             System.out.println("How many players would you like? ");
 

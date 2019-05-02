@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
-public class Map {
+public abstract class Map {
     private int size;
     private Dat[][]map;
 
@@ -47,36 +47,9 @@ public class Map {
         return valid;
     }
 
-    public void generate(int num){
-        int arrSize=size;
-        Random r = new Random();
-        map= new Dat[arrSize][arrSize];
+    public abstract void generate(int num);
 
 
-
-        for (int i = 0; i < arrSize; i++) {
-            for (int j = 0; j < arrSize; j++) {
-                char x=' ';
-                map[i][j] = new Dat(x,num);
-            }
-        }
-
-        final String alphabet = "gw";
-        final int N = alphabet.length();
-
-
-
-        for(int i=0; i<arrSize; i++){
-            for(int j=0; j<arrSize;j++){
-                map[i][j].type = alphabet.charAt(r.nextInt(N));
-            }
-        }
-
-        int x_coordinate = r.nextInt(arrSize);
-        int y_coordinate = r.nextInt(arrSize);
-
-        map[x_coordinate][y_coordinate].type = 't';
-    }
 
     public char getTileType(int x, int y){
         int arrSize=size-1;
