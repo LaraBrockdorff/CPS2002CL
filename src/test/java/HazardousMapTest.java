@@ -1,10 +1,12 @@
 import org.junit.Before;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 
 public class HazardousMapTest {
-    Map maps;
+    HazardousMap maps;
     @Before
     public void setup (){
         maps = new HazardousMap();
@@ -71,5 +73,15 @@ public class HazardousMapTest {
         System.out.println();
     }
 
+    @Test
+    public void test_WaterRange(){
+        maps.setSize(10);
+        maps.generate(5);
+        int waterRatio = maps.getWaterCount();
 
+
+        assertTrue(((waterRatio/(maps.getSize()*maps.getSize()))<= 0.35));
+
+
+    }
 }

@@ -5,6 +5,31 @@ public class SafeMap  extends Map{
     private int waterCount;
     private Double maxWater = 0.1;
 
+    @Override
+    public Dat[][] getMap() {
+        return map;
+    }
+
+    @Override
+    public void setMap(Dat[][] map) {
+        this.map = map;
+    }
+
+    public int getWaterCount() {
+        return waterCount;
+    }
+
+    public void setWaterCount(int waterCount) {
+        this.waterCount = waterCount;
+    }
+
+    public Double getMaxWater() {
+        return maxWater;
+    }
+
+    public void setMaxWater(Double maxWater) {
+        this.maxWater = maxWater;
+    }
 
     public void generate(int num){
         int arrSize= getSize();

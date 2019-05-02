@@ -1,10 +1,13 @@
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 
 public class SafeMapTest {
-    Map maps;
+    SafeMap maps= new SafeMap();
     @Before
     public void setup (){
         maps = new SafeMap();
@@ -70,6 +73,21 @@ public class SafeMapTest {
         System.out.println("ERROR");
         System.out.println();
     }
+
+
+    @Test
+    public void test_WaterRange(){
+        maps.setSize(5);
+        maps.generate(5);
+        int waterRatio = maps.getWaterCount();
+
+
+
+        assertTrue((waterRatio/(maps.getSize()*maps.getSize()))<= 0.1);
+
+
+    }
+
 
 
 }
