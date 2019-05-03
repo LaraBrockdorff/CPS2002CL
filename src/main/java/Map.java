@@ -55,6 +55,7 @@ public abstract class Map {
         int arrSize=size-1;
         char type=' ';
 
+       // System.out.println(map[x][y].getType());
         if(x<arrSize && y<arrSize) {
             if (map[x][y].type == 'g') {
                 type = 'g';

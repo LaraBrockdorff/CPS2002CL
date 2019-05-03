@@ -78,8 +78,8 @@ public class Game {
         for(int i =0; i<n ; i++){
 
                 do {
-                    randX = (int) (Math.random() * map.getSize()+1) ;
-                    randY = (int) (Math.random() * map.getSize()+1) ;
+                    randX = (int) (Math.random() * map.getSize()) ;
+                    randY = (int) (Math.random() * map.getSize()) ;
                 }while (map.getTileType(randX,randY) != 'g');
 
             Position newPosition = new Position(randX,randY);

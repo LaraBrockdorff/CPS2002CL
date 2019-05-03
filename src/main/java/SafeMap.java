@@ -66,6 +66,6 @@ public class SafeMap  extends Map{
         int y_coordinate = r.nextInt(arrSize);
 
         map[x_coordinate][y_coordinate].type = 't';
-        setMap(map);
+        super.setMap(map);
     }
 }
