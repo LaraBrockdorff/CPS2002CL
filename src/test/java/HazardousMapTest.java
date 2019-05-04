@@ -75,8 +75,8 @@ public class HazardousMapTest {
 
     @Test
     public void test_WaterRange(){
-        maps.setSize(10);
-        maps.generate(5);
+        maps.setSize(5);
+        maps.generate(2);
         int waterRatio = maps.getWaterCount();
 
 

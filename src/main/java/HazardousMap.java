@@ -66,11 +66,15 @@ public class HazardousMap extends Map{
             }
         }
 
-        while((waterCount/getSize()*getSize())>minWater){
+        while((waterCount/getSize()*getSize())<minWater){
              int randX = (int) (Math.random() * getSize()) ;
              int randY = (int) (Math.random() * getSize()) ;
 
              map[randX][randY].type = 'w';
+
+
+             waterCount = waterCount + 1;
+
 
         }
 
