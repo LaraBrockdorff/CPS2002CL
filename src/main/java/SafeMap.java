@@ -51,16 +51,20 @@ public class SafeMap  extends Map{
 
 
 
-        do {
             for (int i = 0; i < arrSize; i++) {
                 for (int j = 0; j < arrSize; j++) {
-                    map[i][j].type = alphabet.charAt(r.nextInt(N));
+                    if((waterCount/getSize()*getSize())<maxWater) {
+                        map[i][j].type = alphabet.charAt(r.nextInt(N));
+                    }else {
+                        map[i][j].type = 'g';
+                    }
+
                     if (map[i][j].type == 'w') {
                         waterCount = waterCount + 1;
                     }
                 }
             }
-        }while((waterCount/getSize()*getSize())<maxWater);
+
 
         int x_coordinate = r.nextInt(arrSize);
         int y_coordinate = r.nextInt(arrSize);

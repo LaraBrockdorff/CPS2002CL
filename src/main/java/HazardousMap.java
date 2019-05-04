@@ -4,6 +4,7 @@ public class HazardousMap extends Map{
     private Dat[][]map;
     private int waterCount;
     private Double maxWater = 0.35;
+    private Double minWater = 0.25;
 
 
     @Override
@@ -51,17 +52,27 @@ public class HazardousMap extends Map{
         final int N = alphabet.length();
 
 
-
-        do {
-            for (int i = 0; i < arrSize; i++) {
-                for (int j = 0; j < arrSize; j++) {
+        for (int i = 0; i < arrSize; i++) {
+            for (int j = 0; j < arrSize; j++) {
+                if((waterCount/getSize()*getSize())<maxWater) {
                     map[i][j].type = alphabet.charAt(r.nextInt(N));
-                    if (map[i][j].type == 'w') {
-                        waterCount = waterCount + 1;
-                    }
+                }else {
+                    map[i][j].type = 'g';
+                }
+
+                if (map[i][j].type == 'w') {
+                    waterCount = waterCount + 1;
                 }
             }
-        }while((waterCount/getSize()*getSize())<maxWater);
+        }
+
+        while((waterCount/getSize()*getSize())>minWater){
+             int randX = (int) (Math.random() * getSize()) ;
+             int randY = (int) (Math.random() * getSize()) ;
+
+             map[randX][randY].type = 'w';
+
+        }
 
         int x_coordinate = r.nextInt(arrSize);
         int y_coordinate = r.nextInt(arrSize);
