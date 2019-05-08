@@ -7,7 +7,7 @@ public class MapTest {
     Map maps;
     @Before
     public void setup (){
-        maps = new Map();
+        maps = Map.getInstance();
     }
 
     @Test

@@ -10,6 +10,20 @@ public class Map {
     private Dat[][]map;
 
 
+    private static Map instance=null;
+
+    public static Map getInstance(){
+        if(instance==null){
+            instance=new Map();
+        }
+        return instance;
+    }
+
+    private Map() {
+    }
+
+
+
     public Dat[][] getMap() {
         return map;
     }
