@@ -6,22 +6,24 @@ public class Game {
     private int turns;
     private List<Player> players = new ArrayList<Player>();
    // private Map map = new Map();
+
     private Map map;
+
     private  int n; // number of players
     private int mode;
 
 
 
-    public static void main(String[] args) {
-
-
+  public static void main(String[] args) {
+        Map map;
+        map= Map.getInstance();
         Game thisGame = new Game();
-        thisGame.startGame();
+        thisGame.startGame(map);
 
 
     }
 
-    public void startGame(){
+    public void startGame(Map map){
         boolean valid= true;
 
         Scanner sc = new Scanner(System.in);
@@ -65,12 +67,12 @@ public class Game {
        // setNumberOfPlayers(n);
         map.setMapSize(n, mapSize);
         map.generate(n);
-        setNumberOfPlayers(n);
+        setNumberOfPlayers(n,map);
         gameLoop(n);
 
     }
 
-    public void setNumberOfPlayers(int n){
+    public void setNumberOfPlayers(int n, Map map){
         this.n =n;
         int randX = 0;
         int randY = 0;

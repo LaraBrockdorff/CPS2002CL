@@ -9,7 +9,11 @@ public class HazardousMapTest {
     HazardousMap maps;
     @Before
     public void setup (){
+<<<<<<< HEAD:src/test/java/HazardousMapTest.java
         maps = new HazardousMap();
+=======
+        maps = Map.getInstance();
+>>>>>>> ca554000c3c9dfa0bca9750bda7082cceeb26725:src/test/java/MapTest.java
     }
 
     @Test
