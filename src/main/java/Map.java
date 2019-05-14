@@ -14,12 +14,12 @@ public abstract class Map {
 
     public static Map getInstance(){
         if(instance==null){
-            instance=new Map();
+            instance=new SafeMap(); // safe map as defult type. Real map type (Chosen) will be instaciated once the option is chosen in the game class
         }
         return instance;
     }
 
-    private Map() {
+    public Map() {
     }
 
 

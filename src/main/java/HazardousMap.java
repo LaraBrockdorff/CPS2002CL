@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class HazardousMap extends Map{
+
     private Dat[][]map;
     private int waterCount;
     private Double maxWater = 0.35;
