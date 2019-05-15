@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Game {
     private int turns;
     private List<Player> players = new ArrayList<Player>();
-    List<Team> teamList=new ArrayList<Team>();
+    List<PlayersTeam> teamList=new ArrayList<PlayersTeam>();
    // private Map map = new Map();
+    int [][] teamPlayersIndex; //[teamno ] [playerno]
 
     private Map map;
 
@@ -44,7 +45,7 @@ public class Game {
         }
 
         do {
-            System.out.println("Collaborative mode or Single Player? (Y or N)");
+            System.out.println("Collaborative mode( or Single Player)? (Y- COll or N- SING)");
             String choice = sc.next();
             teamMode=true;
             if (choice.contains("Y") || choice.contains("y")) {
@@ -130,7 +131,7 @@ public class Game {
         int randY = 0;
         int teamNo=0;
         for (int i = 0; i < teams; i++) {
-            Team team = new Team();
+            PlayersTeam team = new PlayersTeam();
             teamList.add(team);
         }
         for(int i =0; i<n ; i++) {
@@ -145,13 +146,17 @@ public class Game {
             Player newPlayer = new Player(newPosition, i);
             newPlayer.setStartingPos(newPosition);
             newPlayer.setMap(map);
-            players.add(newPlayer);
+
             teamNo = (int) (Math.random() * teams);
             teamList.get(teamNo).addObserver(newPlayer);
+
+            newPlayer.setTeamNumber(teamNo);
+            players.add(newPlayer);
+
         }
 
         for(int i=0; i<teams;i++){
-            System.out.println(teamList.get(i).toString());
+            System.out.println(teamList.get(i).toString()+ "\n");
         }
     }
 
@@ -203,8 +208,12 @@ public class Game {
 
                     }
                     else {
-                        playerMap.visitMapTeam(x,y,playerMap,i,players,teamList);
+                        List<Player> currentTeamPLayers = teamList.get(player.getTeamNumber()).getObservers() ;
 
+
+                        playerMap.visitMapTeamLara(x,y,playerMap,i,currentTeamPLayers, teamList.get(player.getTeamNumber()));
+
+                        //TODO: I cannot understand why you originally passed the list of teams instead of the list if players of 1 team
                     }
                     playerMap.generateFile(i,players);
 

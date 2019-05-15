@@ -213,5 +213,33 @@ public abstract class Map {
         return found;
     }
 
+    public boolean visitMapTeamLara(int x, int y, Map mapp, int no,List<Player>players, PlayersTeam team) {
+        Dat[][] mp = mapp.getMap();
+        boolean found = false;
+        if (mp[x][y].type == 'g') {
+            mp[x][y].visited[no] = true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println(" PHEWWW ! COORDINATES (" + x + "," + y + ") ARE SAFE :| CONTINUE");
+
+        } else if (mp[x][y].type == 'w') {
+            mp[x][y].visited[no]= true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println("OOPS! COORDINATES (" + x + "," + y + ") ARE WATER :( GO BACK TO THE STARTING POSITION");
+            players.get(no).setPosition(players.get(no).getStartingPos());
+
+        } else if (mp[x][y].type == 't') {
+            mp[x][y].visited[no] = true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println("COORDINATES (" + x + "," + y + ")  IS THE TREASURE :) YOU WON");
+            found = true;
+        }
+
+
+
+
+        team.getObservers().forEach(observer -> observer.update(x,y));
+
+        return found;
+    }
 
 }

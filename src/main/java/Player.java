@@ -5,6 +5,15 @@ public class Player implements Observer {
     private Map map;
     private int PlayerId;
     private  Position startingPos;
+    private int TeamNumber;
+
+    public int getTeamNumber() {
+        return TeamNumber;
+    }
+
+    public void setTeamNumber(int teamNumber) {
+        TeamNumber = teamNumber;
+    }
 
     public Map getMap() {
         return map;
