@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Game {
     private int turns;
     private List<Player> players = new ArrayList<Player>();
+    List<Team> teamList=new ArrayList<Team>();
    // private Map map = new Map();
 
     private Map map;
@@ -27,7 +28,8 @@ public class Game {
         boolean valid= true;
         boolean teamValid=true;
         boolean validChar=true;
-        List<Team> teamList=new ArrayList<Team>();
+        boolean teamMode=true;
+
         int teams=0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Game");
@@ -44,7 +46,7 @@ public class Game {
         do {
             System.out.println("Collaborative mode or Single Player? (Y or N)");
             String choice = sc.next();
-
+            teamMode=true;
             if (choice.contains("Y") || choice.contains("y")) {
                 do {
                     System.out.println("How many teams would you like");
@@ -109,25 +111,48 @@ public class Game {
        // setNumberOfPlayers(n);
         map.setMapSize(n, mapSize);
         map.generate(n);
-        setNumberOfPlayers(n,map);
-
-
-        if(teams<=0) {
-            //ASSIGNING AND CREATING TEAMS;
-            for (int i = 0; i < teams; i++) {
-                Team team = new Team();
-                teamList.add(team);
-            }
-            for (int j = 0; j < n; j++) {
-                int randTeam = (int) (Math.random() * teams);
-                //teamList.get(randTeam).addObserver();
-                //TO ADD TEAMS TO OBSERVER
-            }
+        if(teams==0) {
+            setNumberOfPlayers(n, map);
+        }
+        else{
+            setNumberOfPlayersAndTeams(n,map,teams);
         }
 
-        gameLoop(n);
+        gameLoop(n,teamMode);
 
 
+    }
+
+    public void setNumberOfPlayersAndTeams(int n, Map map, int teams){
+
+        this.n =n;
+        int randX = 0;
+        int randY = 0;
+        int teamNo=0;
+        for (int i = 0; i < teams; i++) {
+            Team team = new Team();
+            teamList.add(team);
+        }
+        for(int i =0; i<n ; i++) {
+
+            do {
+                randX = (int) (Math.random() * map.getSize());
+                randY = (int) (Math.random() * map.getSize());
+            } while (map.getTileType(randX, randY) != 'g');
+
+            Position newPosition = new Position(randX, randY);
+
+            Player newPlayer = new Player(newPosition, i);
+            newPlayer.setStartingPos(newPosition);
+            newPlayer.setMap(map);
+            players.add(newPlayer);
+            teamNo = (int) (Math.random() * teams);
+            teamList.get(teamNo).addObserver(newPlayer);
+        }
+
+        for(int i=0; i<teams;i++){
+            System.out.println(teamList.get(i).toString());
+        }
     }
 
     public void setNumberOfPlayers(int n, Map map){
@@ -152,7 +177,7 @@ public class Game {
 
     }
 
-    public void gameLoop(int noOfPlayers){
+    public void gameLoop(int noOfPlayers,boolean teamMode){
         Scanner sc = new Scanner(System.in);
         boolean treasureFound=false;
         String [] directions= new String[noOfPlayers];
@@ -173,7 +198,14 @@ public class Game {
                     int x = pos.getX();
                     int y = pos.getY();
                     Map playerMap = player.getMap();
-                    treasureFound = playerMap.visitMap(x, y,playerMap,i,players);
+                    if(!teamMode) {
+                        treasureFound = playerMap.visitMap(x, y, playerMap, i, players);
+
+                    }
+                    else {
+                        playerMap.visitMapTeam(x,y,playerMap,i,players,teamList);
+
+                    }
                     playerMap.generateFile(i,players);
 
                 }

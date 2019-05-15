@@ -152,6 +152,7 @@ public abstract class Map {
 
     public boolean visitMap(int x, int y, Map mapp, int no,List<Player>players) {
          Dat[][] mp = mapp.getMap();
+
         boolean found = false;
         if (mp[x][y].type == 'g') {
             mp[x][y].visited[no] = true;
@@ -179,6 +180,38 @@ public abstract class Map {
         mp[x][y].visited[no]=true;
     }
 
+
+    public boolean visitMapTeam(int x, int y, Map mapp, int no,List<Player>players, List<Team>teams) {
+        Dat[][] mp = mapp.getMap();
+        boolean found = false;
+        if (mp[x][y].type == 'g') {
+            mp[x][y].visited[no] = true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println(" PHEWWW ! COORDINATES (" + x + "," + y + ") ARE SAFE :| CONTINUE");
+
+        } else if (mp[x][y].type == 'w') {
+            mp[x][y].visited[no]= true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println("OOPS! COORDINATES (" + x + "," + y + ") ARE WATER :( GO BACK TO THE STARTING POSITION");
+            players.get(no).setPosition(players.get(no).getStartingPos());
+
+        } else if (mp[x][y].type == 't') {
+            mp[x][y].visited[no] = true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println("COORDINATES (" + x + "," + y + ")  IS THE TREASURE :) YOU WON");
+            found = true;
+        }
+
+        for(Team t: teams){
+            if(t.getObservers().contains(players.get(no))){
+                for(Observer observer: t.getObservers()){
+                    observer.update(x,y);
+                }
+            }
+        }
+
+        return found;
+    }
 
 
 }

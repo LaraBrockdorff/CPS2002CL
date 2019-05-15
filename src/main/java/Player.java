@@ -1,3 +1,5 @@
+import org.jcp.xml.dsig.internal.SignerOutputStream;
+
 public class Player implements Observer {
 
     private Position position;
@@ -28,6 +30,7 @@ public class Player implements Observer {
 
     public void update(int x ,int y) {
       int playerId= getPlayerId();
+        System.out.println("PLAYER ID:" + playerId);
        Map map1=getMap();
        getMap().setVisited(x,y,map1,playerId);
     }
@@ -90,5 +93,15 @@ public class Player implements Observer {
 
     public void setPlayerId(int playerId) {
         PlayerId = playerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "position=" + position +
+                ", map=" + map +
+                ", PlayerId=" + PlayerId +
+                ", startingPos=" + startingPos +
+                '}';
     }
 }

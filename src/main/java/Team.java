@@ -23,4 +23,19 @@ public class Team {
                 observer.update(this.x,this.y);
             }
         }
+
+    public List<Observer> getObservers() {
+        return observers;
+    }
+
+    public void setObservers(List<Observer> observers) {
+        this.observers = observers;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "observers=" + observers +
+                '}';
+    }
 }
