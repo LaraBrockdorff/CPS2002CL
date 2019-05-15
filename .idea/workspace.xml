@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f665723-dda6-4000-b9cf-c41ed61db08c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/PlayersTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HazardousMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HazardousMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Observer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Observer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SafeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SafeMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HazardousMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HazardousMapTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PlayerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/SafeMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SafeMapTest.class" afterDir="false" />
-    </list>
+    <list default="true" id="7f665723-dda6-4000-b9cf-c41ed61db08c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+            <state relative-caret-position="-402">
+              <caret line="158" column="62" selection-start-line="158" selection-start-column="62" selection-end-line="158" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#169#177#0" expanded="true" />
@@ -184,10 +166,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2601" />
-    <option name="y" value="-298" />
-    <option name="width" value="604" />
-    <option name="height" value="696" />
+    <option name="x" value="1023" />
+    <option name="width" value="906" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -235,7 +216,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557959705989" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557959810960" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -253,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager" selected="JUnit.All in calc">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="calc" />
@@ -275,8 +256,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game" />
         <item itemvalue="JUnit.All in calc" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -315,9 +296,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -326,7 +306,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.13321492" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28063944" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.339254" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -483,8 +463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+        <state relative-caret-position="-402">
+          <caret line="158" column="62" selection-start-line="158" selection-start-column="62" selection-end-line="158" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#169#177#0" expanded="true" />

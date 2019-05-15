@@ -235,9 +235,9 @@ public abstract class Map {
         }
 
 
-
-
-        team.getObservers().forEach(observer -> observer.update(x,y));
+        for (Player observer : team.getObservers()) {
+            observer.update(x, y);
+        }
 
         return found;
     }
