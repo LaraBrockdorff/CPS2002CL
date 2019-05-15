@@ -174,6 +174,10 @@ public abstract class Map {
         return found;
     }
 
+    public void setVisited(int x, int y, Map mapp, int no){
+        Dat[][]mp=mapp.getMap();
+        mp[x][y].visited[no]=true;
+    }
 
 
 

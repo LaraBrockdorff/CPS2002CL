@@ -26,8 +26,10 @@ public class Player implements Observer {
         PlayerId = playerId;
     }
 
-    public void update(Object o) {
-        
+    public void update(int x ,int y) {
+      int playerId= getPlayerId();
+       Map map1=getMap();
+       getMap().setVisited(x,y,map1,playerId);
     }
 
     public boolean move(String direction){

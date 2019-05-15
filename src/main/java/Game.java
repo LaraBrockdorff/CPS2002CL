@@ -25,7 +25,10 @@ public class Game {
 
     public void startGame(Map map){
         boolean valid= true;
-
+        boolean teamValid=true;
+        boolean validChar=true;
+        List<Team> teamList=new ArrayList<Team>();
+        int teams=0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Game");
 
@@ -39,17 +42,56 @@ public class Game {
         }
 
         do {
-            System.out.println("How many players would you like? ");
+            System.out.println("Collaborative mode or Single Player? (Y or N)");
+            String choice = sc.next();
 
-            n = sc.nextInt();
-            if (n < 2 || n > 8) {
-                System.out.println("**Please enter a valid integer between 2 and 8 **");
-                valid = false;
-            }else {
-                valid =true;
+            if (choice.contains("Y") || choice.contains("y")) {
+                do {
+                    System.out.println("How many teams would you like");
+                    teams = sc.nextInt();
 
+                    if (n >= 1) {
+                        System.out.println("** Please enter a valid integer greater than 2 or 2 **");
+                        teamValid = false;
+                    } else {
+                        teamValid = true;
+                    }
+
+                } while (!teamValid);
+
+                do {
+                    System.out.println("How many players would you like? ");
+
+                    n = sc.nextInt();
+                    if (n < 2 || n > 8) {
+                        System.out.println("**Please enter a valid integer between 2 and 8 **");
+                        valid = false;
+                    } else {
+                        valid = true;
+                    }
+                } while (!valid);
+                validChar=true;
+
+
+            } else if (choice.contains("N") || choice.contains("n")) {
+                do {
+                    System.out.println("How many players would you like? ");
+
+                    n = sc.nextInt();
+                    if (n < 2 || n > 8) {
+                        System.out.println("**Please enter a valid integer between 2 and 8 **");
+                        valid = false;
+                    } else {
+                        valid = true;
+                    }
+                } while (!valid);
+
+                validChar=true;
+            } else {
+                System.out.println("INVALID CHARACTERS");
+                validChar=false;
             }
-        }while (!valid);
+        }while(!validChar);
 
         int mapSize=0;
         do{
@@ -68,7 +110,23 @@ public class Game {
         map.setMapSize(n, mapSize);
         map.generate(n);
         setNumberOfPlayers(n,map);
+
+
+        if(teams<=0) {
+            //ASSIGNING AND CREATING TEAMS;
+            for (int i = 0; i < teams; i++) {
+                Team team = new Team();
+                teamList.add(team);
+            }
+            for (int j = 0; j < n; j++) {
+                int randTeam = (int) (Math.random() * teams);
+                //teamList.get(randTeam).addObserver();
+                //TO ADD TEAMS TO OBSERVER
+            }
+        }
+
         gameLoop(n);
+
 
     }
 
