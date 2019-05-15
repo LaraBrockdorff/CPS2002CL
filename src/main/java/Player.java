@@ -1,4 +1,4 @@
-public class Player {
+public class Player implements Observer {
 
     private Position position;
     private Map map;
@@ -24,6 +24,10 @@ public class Player {
     public Player(Position position, int playerId) {
         this.position = position;
         PlayerId = playerId;
+    }
+
+    public void update(Object o) {
+        
     }
 
     public boolean move(String direction){
