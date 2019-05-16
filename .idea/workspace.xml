@@ -171,7 +171,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558006483555" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558006684272" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
@@ -199,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in calc">
+  <component name="RunManager" selected="JUnit.TeamTest">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="calc" />
@@ -211,6 +211,14 @@
       <module name="calc" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calc" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TeamTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,9 +248,11 @@
       <item itemvalue="JUnit.All in calc" />
       <item itemvalue="JUnit.TeamTest.addObserver" />
       <item itemvalue="JUnit.TeamTest.removeObserver" />
+      <item itemvalue="JUnit.TeamTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeamTest" />
         <item itemvalue="JUnit.All in calc" />
         <item itemvalue="JUnit.TeamTest.removeObserver" />
         <item itemvalue="JUnit.TeamTest.addObserver" />

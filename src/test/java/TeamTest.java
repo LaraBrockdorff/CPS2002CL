@@ -27,7 +27,12 @@ public class TeamTest {
 
         team.addObserver(newplayer);
 
-        assertTrue(team.getObservers().stream().anyMatch(newplayer::equals));
+        assertTrue(team.getObservers().stream().anyMatch(new Predicate<Player>() {
+            @Override
+            public boolean test(Player player) {
+                return newplayer.equals(player);
+            }
+        }));
         assertTrue(team.getObservers().size()==(initailSize+1));
     }
 
