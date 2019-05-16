@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class Game {
     private int turns;
     private List<Player> players = new ArrayList<Player>();
-    List<PlayersTeam> teamList=new ArrayList<PlayersTeam>();
-   // private Map map = new Map();
-    int [][] teamPlayersIndex; //[teamno ] [playerno]
+    List<Team> teamList=new ArrayList<Team>();
 
     private Map map;
 
@@ -131,7 +129,7 @@ public class Game {
         int randY = 0;
         int teamNo=0;
         for (int i = 0; i < teams; i++) {
-            PlayersTeam team = new PlayersTeam();
+            Team team = new Team();
             teamList.add(team);
         }
         for(int i =0; i<n ; i++) {
@@ -209,13 +207,9 @@ public class Game {
                     }
                     else {
                         List<Player> currentTeamPLayers = teamList.get(player.getTeamNumber()).getObservers() ;
-
-
-                        playerMap.visitMapTeamLara(x,y,playerMap,i,currentTeamPLayers, teamList.get(player.getTeamNumber()));
-
-                        //TODO: I cannot understand why you originally passed the list of teams instead of the list if players of 1 team
+                        playerMap.visitMapTeam(x,y,playerMap,i,currentTeamPLayers, teamList.get(player.getTeamNumber()));
                     }
-                    playerMap.generateFile(i,players);
+                    playerMap.generateFile(player);
 
                 }
             }

@@ -5,7 +5,8 @@ public class Player implements Observer {
     private Map map;
     private int PlayerId;
     private  Position startingPos;
-    private int TeamNumber;
+    private int TeamNumber =100;
+    //since there can never be 100 teams, it is used an a default value to indicate that the player is in SIngle mode
 
     public int getTeamNumber() {
         return TeamNumber;
