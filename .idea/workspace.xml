@@ -49,11 +49,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TeamTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="85">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding>
-                <element signature="e#1154#1155#0" expanded="true" />
-                <element signature="e#1218#1219#0" expanded="true" />
+                <element signature="e#831#832#0" expanded="true" />
+                <element signature="e#894#895#0" expanded="true" />
+                <element signature="e#1289#1290#0" expanded="true" />
+                <element signature="e#1353#1354#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,7 +173,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558006684272" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558006825241" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
@@ -274,12 +276,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MapTest - 2019.05.08 at 13h 20m 17s.xml">
-      <configuration name="MapTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PlayerTest - 2019.05.08 at 13h 20m 28s.xml">
-      <configuration name="PlayerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_calc - 2019.05.14 at 21h 58m 01s.xml">
       <configuration name="All in calc" configurationId="JUnit" />
     </history-entry>
@@ -304,11 +300,18 @@
     <history-entry file="TeamTest_removeObserver - 2019.05.16 at 13h 31m 45s.xml">
       <configuration name="TeamTest.removeObserver" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_calc - 2019.05.16 at 13h 34m 46s.xml">
+      <configuration name="All in calc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamTest - 2019.05.16 at 13h 38m 07s.xml">
+      <configuration name="TeamTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -317,7 +320,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.13321492" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5186501" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5186501" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.77264655" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -348,7 +351,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/TeamTest.java</url>
-          <line>34</line>
+          <line>39</line>
           <properties class="TeamTest" method="removeObserver">
             <option name="EMULATED" value="true" />
           </properties>
@@ -500,11 +503,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TeamTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="85">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding>
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
           </folding>
         </state>
       </provider>

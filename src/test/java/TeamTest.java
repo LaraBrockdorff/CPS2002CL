@@ -21,7 +21,7 @@ public class TeamTest {
     public void addObserver() {
         int initailSize = team.getObservers().size();
 
-        Player newplayer;
+        final Player newplayer;
         Position Newposition = new Position( 0,0);
         newplayer = new Player(Newposition, 1);
 
