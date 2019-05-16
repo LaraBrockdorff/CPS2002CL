@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f665723-dda6-4000-b9cf-c41ed61db08c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TeamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TeamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TeamTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +49,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TeamTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+            <state relative-caret-position="70">
+              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+              <folding>
+                <element signature="e#1154#1155#0" expanded="true" />
+                <element signature="e#1218#1219#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,7 +171,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558006302227" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558006483555" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
@@ -196,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TeamTest.removeObserver">
+  <component name="RunManager" selected="JUnit.All in calc">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="calc" />
@@ -240,10 +243,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in calc" />
         <item itemvalue="JUnit.TeamTest.removeObserver" />
         <item itemvalue="JUnit.TeamTest.addObserver" />
         <item itemvalue="Application.Game" />
-        <item itemvalue="JUnit.All in calc" />
       </list>
     </recent_temporary>
   </component>
@@ -261,15 +264,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_calc - 2019.05.07 at 13h 42m 12s.xml">
-      <configuration name="All in calc" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapTest - 2019.05.04 at 11h 49m 15s.xml">
-      <configuration name="MapTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PlayerTest - 2019.05.04 at 11h 49m 27s.xml">
-      <configuration name="PlayerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MapTest - 2019.05.08 at 13h 20m 17s.xml">
       <configuration name="MapTest" configurationId="JUnit" />
     </history-entry>
@@ -291,12 +285,20 @@
     <history-entry file="TeamTest_addObserver - 2019.05.16 at 13h 26m 39s.xml">
       <configuration name="TeamTest.addObserver" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TeamTest_removeObserver - 2019.05.16 at 13h 29m 23s.xml">
+      <configuration name="TeamTest.removeObserver" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamTest_removeObserver - 2019.05.16 at 13h 30m 47s.xml">
+      <configuration name="TeamTest.removeObserver" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamTest_removeObserver - 2019.05.16 at 13h 31m 45s.xml">
+      <configuration name="TeamTest.removeObserver" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -305,7 +307,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.13321492" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14564832" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5186501" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.77264655" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -336,7 +338,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/TeamTest.java</url>
-          <line>32</line>
+          <line>34</line>
           <properties class="TeamTest" method="removeObserver">
             <option name="EMULATED" value="true" />
           </properties>
@@ -488,8 +490,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TeamTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        <state relative-caret-position="70">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="e#1154#1155#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

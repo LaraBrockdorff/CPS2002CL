@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.function.Predicate;
+
 import static org.junit.Assert.*;
 
 public class TeamTest {
@@ -25,7 +27,7 @@ public class TeamTest {
 
         team.addObserver(newplayer);
 
-        assertTrue(team.getObservers().stream().anyMatch(player -> newplayer.equals(player)));
+        assertTrue(team.getObservers().stream().anyMatch(newplayer::equals));
         assertTrue(team.getObservers().size()==(initailSize+1));
     }
 
@@ -39,8 +41,13 @@ public class TeamTest {
         team.removeObserver(Teamplayer);
 
 
-        
-        assertFalse(team.getObservers().stream().anyMatch(player -> Teamplayer.equals(player)));
+
+        assertFalse(team.getObservers().stream().anyMatch(new Predicate<Player>() {
+            @Override
+            public boolean test(Player player) {
+                return Teamplayer.equals(player);
+            }
+        }));
         assertTrue(team.getObservers().size()==(initailSize-1));
 
     }
