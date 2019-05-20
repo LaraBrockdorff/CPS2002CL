@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import java.util.Random;
 
 public abstract class Map {
     private int size;
@@ -136,13 +135,14 @@ public abstract class Map {
         return sb.toString();
     }
 
-    public void generateFile(int i, List<Player> players) {
+    public void generateFile(Player player) {
 
-        File f = new File("test_" + i + ".html");
-        Map map = players.get(i).getMap();
+
+        File f = new File("map_player_" + player.getPlayerId() +"_Team"+player.getTeamNumber()+ ".html");
+        Map map = player.getMap();
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
-            bw.write(generateHTML(map,i));
+            bw.write(generateHTML(map,player.getPlayerId()));
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -152,6 +152,7 @@ public abstract class Map {
 
     public boolean visitMap(int x, int y, Map mapp, int no,List<Player>players) {
          Dat[][] mp = mapp.getMap();
+
         boolean found = false;
         if (mp[x][y].type == 'g') {
             mp[x][y].visited[no] = true;
@@ -174,7 +175,40 @@ public abstract class Map {
         return found;
     }
 
+    public void setVisited(int x, int y, Map mapp, int no){
+        Dat[][]mp=mapp.getMap();
+        mp[x][y].visited[no]=true;
+    }
 
 
+
+    public boolean visitMapTeam(int x, int y, Map mapp, int no, List<Player>players, Team team) {
+        Dat[][] mp = mapp.getMap();
+        boolean found = false;
+        if (mp[x][y].type == 'g') {
+            mp[x][y].visited[no] = true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println(" PHEWWW ! COORDINATES (" + x + "," + y + ") ARE SAFE :| CONTINUE");
+
+        } else if (mp[x][y].type == 'w') {
+            mp[x][y].visited[no]= true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println("OOPS! COORDINATES (" + x + "," + y + ") ARE WATER :( GO BACK TO THE STARTING POSITION");
+            players.get(no).setPosition(players.get(no).getStartingPos());
+
+        } else if (mp[x][y].type == 't') {
+            mp[x][y].visited[no] = true;
+            mp[x][y].isVisiting[no] = true;
+            System.out.println("COORDINATES (" + x + "," + y + ")  IS THE TREASURE :) YOU WON");
+            found = true;
+        }
+
+
+        for (Player observer : team.getObservers()) {
+            observer.update(x, y);
+        }
+
+        return found;
+    }
 
 }

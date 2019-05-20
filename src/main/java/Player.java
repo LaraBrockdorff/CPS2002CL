@@ -1,9 +1,20 @@
-public class Player {
+
+public class Player implements Observer {
 
     private Position position;
     private Map map;
     private int PlayerId;
     private  Position startingPos;
+    private int TeamNumber =100;
+    //since there can never be 100 teams, it is used an a default value to indicate that the player is in SIngle mode
+
+    public int getTeamNumber() {
+        return TeamNumber;
+    }
+
+    public void setTeamNumber(int teamNumber) {
+        TeamNumber = teamNumber;
+    }
 
     public Map getMap() {
         return map;
@@ -24,6 +35,13 @@ public class Player {
     public Player(Position position, int playerId) {
         this.position = position;
         PlayerId = playerId;
+    }
+
+    public void update(int x ,int y) {
+      int playerId= getPlayerId();
+        System.out.println("PLAYER ID:" + playerId);
+       Map map1=getMap();
+       getMap().setVisited(x,y,map1,playerId);
     }
 
     public boolean move(String direction){
@@ -84,5 +102,15 @@ public class Player {
 
     public void setPlayerId(int playerId) {
         PlayerId = playerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "position=" + position +
+                ", map=" + map +
+                ", PlayerId=" + PlayerId +
+                ", startingPos=" + startingPos +
+                '}';
     }
 }
